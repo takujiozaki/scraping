@@ -9,7 +9,7 @@ driver_path = ChromeDriverManager().install()
 driver = webdriver.Chrome(service=Service(executable_path=driver_path))
 
 #ページ接続
-driver.get('http://127.0.0.1:5500/')
+driver.get('https://studioham.net/selenium/')
 
 #ページタイトルを取得
 page_title = driver.title
