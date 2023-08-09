@@ -24,6 +24,11 @@ h2_elements = driver.find_elements(By.TAG_NAME,'h2')
 for h2_element in h2_elements:
     print(h2_element.text)
 
+print('outerHTML',h1_element.get_attribute('outerHTML'))
+print('innerHTML',h1_element.get_attribute('innerHTML'))
+print('outerText',h1_element.get_attribute('outerText'))
+print('innerText',h1_element.get_attribute('innerText'))
+
 # クラスの取得
 class_elements = driver.find_elements(By.CLASS_NAME,'card-body')
 for class_element in class_elements:
@@ -36,6 +41,25 @@ print(css_selector.text)
 # XPath
 x_path = driver.find_element(By.XPATH,'/html/body/div/div[1]/div[2]')
 print(x_path.text)
+
+
+# リンクテキスト(完全一致)
+link_text = driver.find_element(By.LINK_TEXT,'公式(英語)')
+print(link_text.text)
+
+# リンクテキスト(部分一致)
+links_text = driver.find_elements(By.PARTIAL_LINK_TEXT,'公式')
+for link in links_text:
+    print(link.text)
+    print(link.get_attribute('href'))
+
+# リンクをクリック
+link_text.click()
+
+#遷移したページのタイトルを取得
+page_title2 = driver.title
+print(page_title2)
+
 # クロームの終了処理
 driver.close()
 
