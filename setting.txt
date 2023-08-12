@@ -1,0 +1,10 @@
+python -m venv .venv
+.venv\Scripts\activate
+pip install flask
+
+pythonファイル名は「app.py」
+
+「templates」というフォルダを作成
+中にindex.htmlを移動
+
+
